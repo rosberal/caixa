@@ -11,7 +11,8 @@ valor1: number;
 valor2: number;
 cor1: string;
 cor2: string;
-
+acao1: string;
+acao2: string;
 datahora: number;
 ngOnInit() {
   this.valor1 = Math.round((Math.random() * 100) + 1);
@@ -19,7 +20,9 @@ ngOnInit() {
 
   this.cor1 = (this.valor1 > 50) ? 'bg-success' : 'bg-danger';
   this.cor2 = (this.valor2 > 50) ? 'bg-success' : 'bg-danger';
-this.datahora = Date.now();
+this.acao1 = (this.valor1 > 50) ? 'Valor acima da meta' : 'Valor abaixo da meta';
+this.acao2 = (this.valor2 > 50) ? 'Valor acima da meta' : 'Valor abaixo da meta';
+  this.datahora = Date.now();
 
 }
 

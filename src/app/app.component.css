@@ -1,5 +1,5 @@
 .col-sm-6   {
-    background-color: lightblue;
+    background-color: #29BBE7;
      border: 1px solid white;
 
 }
@@ -8,14 +8,25 @@
 {
     text-align: center;
     color: white;
-
+    font-size: 1.1em;
 }
 
 .tituloPrincipal
 {
     text-align: center;
-    color: black;
-  
-    
-  
+    color: blue;
+   font-size: 1.5em;
+}
+
+.rodape
+{
+    text-align: left;
+    color: blue;
+   font-size: 0.7em;
+}
+.acao
+{
+    text-align: left;
+    color: white;
+   font-size: 0.7em;
 }
