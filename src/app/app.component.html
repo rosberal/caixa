@@ -11,20 +11,21 @@
     <div class="col-sm-6" >
       <p class=titulo>Barra 1</p>
       <div class="progress">
-        <div [ngClass]="'progress-bar ' + cor1 " role="progressbar" [ngStyle]="{'width': valor1+'%'}"  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">{{valor1}}</div>
+        <div [ngClass]="'progress-bar ' + cor1 " role="progressbar" [ngStyle]="{'width': valor1+'%'}"  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">{{valor1}}%</div>
       </div>
+      <br>
       
     </div>
     <div class="col-sm-6" >
       <p class = titulo>Barra 2</p>
       <div class="progress">
-        <div [ngClass] ="'progress-bar ' + cor2 " role="progressbar"  [ngStyle]="{'width': valor2+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{valor2}}</div>
+        <div [ngClass] ="'progress-bar ' + cor2 " role="progressbar"  [ngStyle]="{'width': valor2+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{valor2}}%</div>
       </div>
+    <br>
     </div>
 
   </div>
-  <br>
-<p> Atualização: {{datahora | date:'short'}}</p>
+  <p>Atualização: {{datahora | date:'short'}}</p>
 </div>
  
 
