@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ColocaDadosBancoComponent } from './coloca-dados-banco/coloca-dados-banco.component';
+import { PegaDadosBancoComponent } from './pega-dados-banco/pega-dados-banco.component';
+
 
 @Component({
   selector: 'app-root',
@@ -14,6 +17,12 @@ cor2: string;
 acao1: string;
 acao2: string;
 datahora: number;
+teste: any;
+
+constructor() {
+
+}
+
 ngOnInit() {
   this.valor1 = Math.round((Math.random() * 100) + 1);
   this.valor2 = Math.round((Math.random() * 100) + 1);
@@ -23,7 +32,7 @@ ngOnInit() {
 this.acao1 = (this.valor1 > 50) ? 'Valor acima da meta' : 'Valor abaixo da meta';
 this.acao2 = (this.valor2 > 50) ? 'Valor acima da meta' : 'Valor abaixo da meta';
   this.datahora = Date.now();
-
+ 
 }
 
 
