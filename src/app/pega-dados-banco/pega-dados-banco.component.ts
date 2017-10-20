@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output} from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 
@@ -8,23 +8,29 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./pega-dados-banco.component.css']
 })
 export class PegaDadosBancoComponent implements OnInit {
-
   items: Observable<any[]>;
-  constructor(private db: AngularFireDatabase) {
+ 
+  @Output() mudouLista = new EventEmitter();
 
-  }
+  constructor(private db: AngularFireDatabase) {}
   ngOnInit() {
-  }
-
-
-  atualizaDados(){
     this.items = this.db.list('tupla').valueChanges();
-    console.log('lista de retorno', this.items);
-  
+    this.items.subscribe(dados => {
+      
+      this.mudouLista.emit(dados);
+
+    });
   }
 
+  atualizaDados() {
+    console.log('lista de retorno', this.items);
+
+    // this.items.map(dados => console.log('dados', dados));
+
+    /* 
+  this.http
+  .get(`//viacep.com.br/ws/${cep}/json/`)
+  .map(dados => dados.json())
+  .subscribe(dados => this.populaDadosForm(dados, form)); */
+  }
 }
-
-
-
-

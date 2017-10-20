@@ -18,7 +18,7 @@ acao1: string;
 acao2: string;
 datahora: number;
 teste: any;
-
+listaDoPai: any;
 constructor() {
 
 }
@@ -35,5 +35,10 @@ this.acao2 = (this.valor2 > 50) ? 'Valor acima da meta' : 'Valor abaixo da meta'
  
 }
 
+onMudouLista(lista) {
+this.listaDoPai = lista;
+  console.log('lista do pai', lista);
+
+}
 
 }
