@@ -1,15 +1,17 @@
-<div class="container " *ngIf="listaDoGrafico then atualizaGrafico(listaDoGrafico)" >
+<div class="container " >
 <div class="row">
   <div class="col-md-12">
-    <div style="display: block;">
-    <canvas baseChart width="200" height="100"
-                [datasets]="lineChartData"
+    <div style="display: block;"   >
+    <canvas  baseChart  width="200" height="100"
+              [datasets]="lineChartData"
                 [labels]="lineChartLabels"
                 [options]="lineChartOptions"
                 [colors]="lineChartColors"
                 [legend]="lineChartLegend"
                 [chartType]="lineChartType"
+
                 ></canvas>
     </div>
   </div>
+  <button type="button" class="btn btn-primary "  (click)="forcaAtualizaGrafico()">Atualiza Grafico</button>
 </div>

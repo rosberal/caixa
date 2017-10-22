@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output} from '@angular/core';
+import { Component, EventEmitter,  OnInit, Output } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 
@@ -9,14 +9,14 @@ import { Observable } from 'rxjs/Observable';
 })
 export class PegaDadosBancoComponent implements OnInit {
   items: Observable<any[]>;
- 
+
   @Output() mudouLista = new EventEmitter();
 
   constructor(private db: AngularFireDatabase) {}
   ngOnInit() {
     this.items = this.db.list('tupla').valueChanges();
     this.items.subscribe(dados => {
-      
+
       this.mudouLista.emit(dados);
 
     });
@@ -27,7 +27,7 @@ export class PegaDadosBancoComponent implements OnInit {
 
     // this.items.map(dados => console.log('dados', dados));
 
-    /* 
+    /*
   this.http
   .get(`//viacep.com.br/ws/${cep}/json/`)
   .map(dados => dados.json())

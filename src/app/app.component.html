@@ -8,28 +8,28 @@
 <p class=tituloPrincipal>Teste de Bootstrap</p>
  <div class="container ">
   <div class="row align-items-center" >
-    <div class="col-sm-6" >
+    <div class="col-sm-12" >
       <p class=titulo>Barra 1</p>
       <div class="progress">
         <div [ngClass]="'progress-bar ' + cor1 " role="progressbar" [ngStyle]="{'width': valor1+'%'}"  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">{{valor1}}%</div>
       </div>
       <p class=acao>{{acao1}}</p>
-      
+
     </div>
-    <div class="col-sm-6" >
+    <!--<div class="col-sm-6" >
       <p class = titulo>Barra 2</p>
       <div class="progress">
         <div [ngClass] ="'progress-bar ' + cor2 " role="progressbar"  [ngStyle]="{'width': valor2+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{valor2}}%</div>
       </div>
     <p class=acao>{{acao2}}</p>
     </div>
-
+ -->
   </div>
-  <p class=rodape >Atualização: {{datahora | date:'short'}}</p>
+  <p class=rodape >Atualização: {{datahora | date:'dd/MM/yy HH:mm:ss'}}</p>
 </div>
 <app-coloca-dados-banco></app-coloca-dados-banco>
 <br>
-<app-grafico [listaDoGrafico] = listaDoPai ></app-grafico>
+<app-grafico [listaDoGrafico] = listaDoPai *ngIf="listaDoPai"   ></app-grafico>
 <br>
 <app-pega-dados-banco (mudouLista)= onMudouLista($event) ></app-pega-dados-banco>
 
