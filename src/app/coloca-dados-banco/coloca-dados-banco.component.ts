@@ -14,8 +14,12 @@ export class ColocaDadosBancoComponent implements OnInit {
   }
 
 
-chamaColocaDados(){
+chamaColocaDados() {
   this.coloca.colocaDados();
+}
+
+chamaDeletaDados() {
+  this.coloca.deletaTodosDados();
 }
 
 }
