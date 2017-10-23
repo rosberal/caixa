@@ -11,6 +11,7 @@ import { PegaDadosBancoComponent } from './pega-dados-banco/pega-dados-banco.com
 export class AppComponent implements OnInit, OnChanges {
   title = 'app';
 valor1: number;
+corbg1: string;
 cor1: string;
 acao1: string;
 datahora: number;
@@ -35,7 +36,8 @@ this.listaDoPai = lista;
 let ultimo = this.listaDoPai.map(resp => resp.valor);
 this.valor1 = ultimo[ultimo.length - 1];
 console.log('valor1',this.valor1);
-this.cor1 = (this.valor1 > 50) ? 'bg-success' : 'bg-danger';
+this.corbg1 = (this.valor1 > 50) ? 'bg-success' : 'bg-danger';
+this.cor1 = (this.valor1 > 50) ? 'text-primary' : 'text-danger';
 this.acao1 = (this.valor1 > 50) ? 'Valor acima da meta' : 'Valor abaixo da meta';
 ultimo = this.listaDoPai.map(resp => resp.datahora);
 this.datahora = ultimo[ultimo.length - 1];

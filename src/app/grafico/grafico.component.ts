@@ -88,20 +88,33 @@ export class GraficoComponent implements OnInit, DoCheck, AfterViewInit, OnChang
   ngDoCheck() {
   }
 ngOnChanges() {
-this.atualizaGrafico(this.listaDoGrafico);
+this.atualizaGraficoDados(this.listaDoGrafico);
 // console.log('Lista do grafico', this.listaDoGrafico);
 
 }
 
-atualizaGrafico(lista) {
+atualizaGraficoDados(lista) {
     this.valor = lista.map(resp => resp.valor);
    this.lineChartData = [{data: this.valor, label: 'id' }, ];
    this.lineChartLabels = [];
+   setTimeout(() => this.lineChartLabels = this.atualizaGraficoLabel(this.listaDoGrafico), 500);
+ 
+  // this.lineChartLabels = [];
 }
 
-atualizaGraficoLabel() {
-  this.dataHora = this.listaDoGrafico.map(resp => resp.datahora);
-  this.lineChartLabels = this.dataHora;
+atualizaGraficoLabel(label) {
+ let d = new Date();
+ let dataHoraNovo: any[] = [];
+ let i: number;
+ const dataHora = label.map(resp => resp.datahora);
+ for (i = 0; i < dataHora.length; i++) {
+d.setTime(dataHora[i]);
+
+dataHoraNovo.push(d.toLocaleString());
+
+}
+ 
+ return dataHoraNovo;
 }
 /* forcaAtualizaGrafico() {
 this.atualizaGrafico(this.listaDoGrafico);

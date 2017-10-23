@@ -9,9 +9,8 @@
                 [colors]="lineChartColors"
                 [legend]="lineChartLegend"
                 [chartType]="lineChartType"
-
+*ngIf= "lineChartLabels !=[]"
                 ></canvas>
     </div>
   </div>
-  <button type="button" class="btn btn-primary "  (click)="forcaAtualizaGrafico()">Atualiza Grafico</button>
-</div>
+ </div>
