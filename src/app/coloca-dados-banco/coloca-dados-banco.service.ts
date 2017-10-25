@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class ColocaDadosBancoService {
@@ -28,5 +29,13 @@ deletaTodosDados() {
 
 }
 
+ deletaUltimoDado() {
+this.angularFire.list('tupla').snapshotChanges().subscribe(dados => {
+  console.log('ultimodado', dados);
+  console.log('ultimomesmo', dados[dados.length - 1]);
+  console.log('ultimomesmo', dados[ dados.length - 1 ].key);
+  this.angularFire.list('tupla').remove(dados[ dados.length - 1 ].key)
+});
 
+}
 }

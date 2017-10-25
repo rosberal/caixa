@@ -18,8 +18,13 @@ chamaColocaDados() {
   this.coloca.colocaDados();
 }
 
-chamaDeletaDados() {
+chamaDeletaTodosDados() {
   this.coloca.deletaTodosDados();
 }
+
+ chamaDeletaUltimoDado() {
+  this.coloca.deletaUltimoDado();
+}
+
 
 }

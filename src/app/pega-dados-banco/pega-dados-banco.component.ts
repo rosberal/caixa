@@ -26,11 +26,5 @@ export class PegaDadosBancoComponent implements OnInit {
     console.log('lista de retorno', this.items);
 
     // this.items.map(dados => console.log('dados', dados));
-
-    /*
-  this.http
-  .get(`//viacep.com.br/ws/${cep}/json/`)
-  .map(dados => dados.json())
-  .subscribe(dados => this.populaDadosForm(dados, form)); */
   }
 }
